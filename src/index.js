@@ -22,11 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     toyFormContainer.style.display = "none";
   })
   
-  document.body.addEventListener("click", (e) => {
+  toyCollection.addEventListener("click", (e) => {
     if (e.target.className === "like-btn") {
       const toyId = e.target.closest(".card").dataset.id
-      const currentLikes = parseInt(e.target.closest(".card").querySelector("p").textContent)
-      updateLikes(toyId, currentLikes)
+      const likesTag = e.target.closest(".card").querySelector("p")
+      const newLikes = parseInt(likesTag.textContent) + 1
+      likesTag.textContent = `${newLikes} likes`
+      updateLikes(toyId, newLikes)
     }
   })
 });
@@ -79,11 +81,11 @@ function addNewToy(event) {
   })
 }
 
-function updateLikes(toyId, currentLikes) {
-  
+function updateLikes(toyId, newLikes) {
   const updatedLikes = {
-    likes: `${currentLikes++}`
+    likes: `${newLikes}`
   }
+
   fetch(baseUrl + `/${toyId}`, {
     method: "PATCH",
     headers: {
@@ -92,7 +94,4 @@ function updateLikes(toyId, currentLikes) {
     },
     body: JSON.stringify(updatedLikes)
   })
-  .then(res => console.log(res.json()))
 }
-
-// function renderNewLikes()
