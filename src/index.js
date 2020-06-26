@@ -25,7 +25,6 @@ function getToyData() {
     return res.json();
   })
   .then(function(json) {
-    // console.log(json)
     json.forEach(function(toy) {
       renderToy(toy)
     })
@@ -47,8 +46,8 @@ function renderToy(toy) {
   //add event listener to card
   cardDiv.addEventListener("click", function(e) {
     if (e.target.className === "like-btn") {
-      // do patch
-      patchLike(toy, e.target)
+      let newLike = parseInt(e.target.previousElementSibling.innerText) + 1
+      patchLike(toy, newLike, e.target)
     }
   })
 }
@@ -96,15 +95,14 @@ function createToy(newToyObject) {
 //patch req to toys/:id
 //if success - update
 
-function patchLike(toy, like) {
-  console.log(toy)
+function patchLike(toy, newLike, likeBtn) {
   let configObj = {
     method: "PATCH",
     headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
     },
-    body: JSON.stringify({"likes": toy.likes + 1})
+    body: JSON.stringify({"likes": newLike})
   }
   fetch(`http://localhost:3000/toys/${toy.id}`, configObj)
   .then(function(res) {
@@ -112,13 +110,12 @@ function patchLike(toy, like) {
   })
   .then(function(obj) {
     console.log(obj)
-    addLike(like, toy)
+    addLike(likeBtn, newLike)
   })
 }
 
-//this isn't ideal and requires a refresh - refactor!
-function addLike(like, toy) {
-  like.previousElementSibling.innerText = `${toy.likes + 1} likes`
+function addLike(likeBtn, newLike) {
+  likeBtn.previousElementSibling.innerText = newLike + " Likes";
 }
 
 

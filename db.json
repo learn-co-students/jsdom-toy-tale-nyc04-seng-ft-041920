@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 9
+      "likes": 12
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 12
+      "likes": 45
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "id": 4,
       "name": "Slinky Dog",
       "image": "https://www.freeiconspng.com/uploads/slinky-png-transparent-1.png",
-      "likes": 7
+      "likes": 8
     },
     {
       "id": 5,
@@ -69,13 +69,13 @@
     {
       "name": "pikaaa2",
       "image": "https://www.kumulos.com/wp-content/uploads/2013/10/pikachu-6.png",
-      "likes": 0,
+      "likes": 1,
       "id": 12
     },
     {
       "name": "Sylveon",
       "image": "https://i.pinimg.com/originals/d3/21/05/d32105a9c7bc01d8f28c058d14173ece.png",
-      "likes": 0,
+      "likes": 7,
       "id": 13
     }
   ]
