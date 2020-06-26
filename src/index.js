@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderToy(toy){
     let toyContainer = document.createElement('div')
     toyContainer.classList = 'card'
-    toyContainer.dataset.id = toy.id 
+    toyContainer.dataset.id = toy.id //only if using event delegation 
     toyContainer.innerHTML = `
       <h2>${toy.name}</h2>
       <img src=${toy.image} class="toy-avatar" />
