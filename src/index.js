@@ -51,3 +51,15 @@ function createDivCard(toys) {
     console.log(divToyCollection);
   });
 };
+
+fetch ("http://localhost:3000/toys", {
+  method: "POST",
+  headers: {
+    "Content-Type": "applicaton/json",
+    Accept: "application/json"
+  }
+
+  body: JSON.stringify({
+    "name": "Jessie"
+  })
+});
