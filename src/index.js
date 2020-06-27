@@ -51,6 +51,8 @@ function createDivCard(toys) {
     console.log(divToyCollection);
   });
 };
+const addToyFormParentNode = document.querySelector(".add-toy-form");
+addToyFormParentNode.addEventListener("submit", )
 
 fetch ("http://localhost:3000/toys", {
   method: "POST",
@@ -60,6 +62,8 @@ fetch ("http://localhost:3000/toys", {
   }
 
   body: JSON.stringify({
-    "name": "Jessie"
+    "name": name,
+    "image": image,
+    "likes": 0
   })
 });
