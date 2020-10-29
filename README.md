@@ -12,7 +12,7 @@ data using a JSON server. In order to do this, run the following two commands:
    * `json-server --watch db.json`
    
 This will create a server storing all of our lost toy data with restful routes
-at `http://localhost:3000/toys`. You can also check out
+at `http://localhost:3000/toys/:id`. You can also check out
 `http://localhost:3000/toys/:id`
 
 ## Fetch Andy's Toys
